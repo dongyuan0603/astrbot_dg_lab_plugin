@@ -113,7 +113,7 @@ class MyPlugin(Star):
     async def handle_shock_command(self, event: AstrMessageEvent, args: str = ""):
         """处理 /shock 命令（带参数）"""
         try:
-            strength, time, override = self._parse_args(args_str)
+            strength, time, override = self._parse_args(args)
             result = await self._send_fire_command(strength, time, override)
             yield event.plain_result(result)
         except Exception as e:
