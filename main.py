@@ -107,7 +107,7 @@ class MyPlugin(Star):
             "  -o  覆盖模式，可选，True=重置计时，False=叠加，除非是True不然该值视为False\n"
             "示例：/shock -s 30 -t 10 -o False"
         )
-        await event.reply(help_text)
+        yield event.plain_result(help_text)
 
     @filter.regex(r'shock(.*)')
     async def handle_shock_command(self, event: AstrMessageEvent, args_str):
@@ -115,10 +115,10 @@ class MyPlugin(Star):
         try:
             strength, time, override = self._parse_args(args_str)
             result = await self._send_fire_command(strength, time, override)
-            await event.reply(result)
+            yield event.plain_result(result)
         except Exception as e:
             logger.exception("处理 /shock 命令时发生未知异常")
-            await event.reply(f"处理命令时发生未知错误: {str(e)}")
+            yield event.plain_result(f"处理命令时发生未知错误: {str(e)}")
 
     async def terminate(self):
         """插件卸载时清理资源"""
