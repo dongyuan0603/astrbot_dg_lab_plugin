@@ -96,6 +96,10 @@ class MyPlugin(Star):
             override = val=='True'
         return strength, time, override
 
+    @filter.event(AstrMessageEvent)
+    async def debug_all(self, event: AstrMessageEvent):
+        logger.info(f"实际消息内容: {event.message_str}")
+    
     @filter.regex(r'/shockhelp')
     async def handle_shock_help(self, event: AstrMessageEvent):
         """显示 /shock 命令帮助"""
