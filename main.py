@@ -96,7 +96,7 @@ class MyPlugin(Star):
             override = val=='True'
         return strength, time, override
 
-    @filter.event(AstrMessageEvent)
+    @filter.regex(r'.*')
     async def debug_all(self, event: AstrMessageEvent):
         logger.info(f"实际消息内容: {event.message_str}")
     
