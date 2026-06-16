@@ -4,7 +4,7 @@
 
 它能让你通过聊天控制 [DG-Lab Coyote Game Hub](https://github.com/hyperzlib/DG-Lab-Coyote-Game-Hub) 这个神奇的玩意儿，实现远程“一键开火”（你懂的 😉）。
 
-这个项目是https://github.com/RC-CHN/astrbot_dg_lab_plugin的分支,将llm替换为了固定的命令触发.
+这个项目是[AstrBot x 郊狼: 一键开火插件](https://github.com/RC-CHN/astrbot_dg_lab_plugin)的分支,将llm替换为了固定的命令触发.
 
 ## 功能就一个: /shock 触发电击
 
