@@ -3,3 +3,4 @@ desc: 赐予群友雷电之力。 # 插件简短描述
 version: v0.1 
 author: Orange9 # 作者
 repo: https://github.com/dongyuan0603/astrbot_dg_lab_plugin # 插件的仓库地址
+main: main.py
