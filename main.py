@@ -96,7 +96,7 @@ class MyPlugin(Star):
             override = val=='True'
         return strength, time, override
 
-    @filter.regex(r'^/shockhelp$')
+    @filter.regex(r'/shockhelp')
     async def handle_shock_help(self, event: AstrMessageEvent):
         """显示 /shock 命令帮助"""
         help_text = (
@@ -109,7 +109,7 @@ class MyPlugin(Star):
         )
         await event.reply(help_text)
 
-    @filter.regex(r'^/shock(.*)')
+    @filter.regex(r'/shock(.*)')
     async def handle_shock_command(self, event: AstrMessageEvent, args_str):
         """处理 /shock 命令（带参数）"""
         try:
